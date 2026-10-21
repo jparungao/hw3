@@ -1,11 +1,5 @@
 #include "llrec.h"
 
-//*********************************************
-// Provide your implementation of llpivot below
-//*********************************************
-
-//Helper: processes the list rooted at 'curr' and appends each node to the end of either smaller or larger list.
-//smallTail and largeTail point to the 'next' pointer (head pointer) where next node should be attatched
 static void llpivotHelper(Node* curr, Node**& smallTail, Node**& largeTail, int pivot)
 {
   if(curr == NULL){
