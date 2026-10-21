@@ -83,7 +83,18 @@ Node* llfilter(Node* head, Comp pred)
     //*********************************************
     // Provide your implementation below
     //*********************************************
+  if(head == NULL){
+    return NULL;
+  }
 
+  Node* rest = llfilter(head->next, pred);  //Filter the rest of the list first, after decide about node
+
+  if(pred(head->val)){
+    delete head;  //a removed node has to be deallocated
+    return rest;  //skip over this node
+  }
+  head->next = rest;  //keep this node, then relink to filtered remaider
+  return head;
 
 }
 
